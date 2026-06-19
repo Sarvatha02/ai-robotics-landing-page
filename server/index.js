@@ -44,7 +44,12 @@ app.use((err, req, res, next) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`[Success] Server is running on port ${PORT}`);
-  console.log(`[Info] Local endpoint: http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`[Success] Server is running on port ${PORT}`);
+    console.log(`[Info] Local endpoint: http://localhost:${PORT}`);
+  });
+}
+
+export default app;
+
