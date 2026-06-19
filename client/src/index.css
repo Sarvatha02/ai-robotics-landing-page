@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563EB;
+  --color-primary-light: #3B82F6;
+  --color-primary-dark: #1D4ED8;
+  --color-secondary: #7C3AED;
+  --color-secondary-light: #8B5CF6;
+  --color-secondary-dark: #6D28D9;
+  --color-light-bg: #F8FAFC;
+  --color-dark-text: #0F172A;
+  
+  --font-sans: 'Inter', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #ffffff;
+    color: var(--color-dark-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::selection {
+    background-color: var(--color-primary-light);
+    color: #ffffff;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Premium Glassmorphism & Cards */
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .premium-card {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  }
+
+  .premium-card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.12)] hover:border-slate-300/60;
+  }
+
+  /* Headline Blends */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-indigo-600 to-secondary;
+  }
+
+  /* Grid Patterns */
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 99, 235, 0.035) 1px, transparent 1px);
+  }
+
+  /* Animated Orb Backdrops */
+  .accent-circle-primary {
+    filter: blur(100px);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  .accent-circle-secondary {
+    filter: blur(100px);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  /* Professional Float animations */
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
