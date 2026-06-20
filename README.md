@@ -3,7 +3,6 @@
 A modern, responsive full-stack workshop landing page built using **React.js**, **Tailwind CSS**, **Node.js**, and **Express.js**. This project showcases an AI & Robotics Summer Workshop for children and includes a complete registration workflow with backend API integration.
 
 ---
-
 ## 📖 Overview
 
 The **AI & Robotics Summer Workshop** landing page is designed to provide parents and students with comprehensive information about the program while enabling seamless registration through an enquiry form.
